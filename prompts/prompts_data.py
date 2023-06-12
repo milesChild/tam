@@ -1,14 +1,14 @@
-# TODO: Some of these may require multiple user input prompts... :{
-
 OPERATION_MAP = [
     # create_ticket
     {'operation': 'create_ticket',
      'description': "Operation to open a new request for quote ticket upon a client's request.", 
      'examples': [
         'make me a market for 1000000 shares of AAPL',
-        'I’m looking for a NAV offer in 1M shares spy',
+        'Im looking for a NAV offer in 1M shares spy',
         'Looking for 2 way spy NAV',
-        "Where's your bid on 200K shares of IBB?"
+        "Where's your bid on 200K shares of IBB?",
+        "Where are you on US982428TYHk7?",
+        "Where is your market on BTC/USD?"
         ]
     },
     # get_trade_history
@@ -38,22 +38,25 @@ OPERATION_MAP = [
         'I need to update a quote.'
         ]
     },
-    # confirm_trade
-    # {'operation': 'confirm_trade',
-    #     'description': "Operation to confirm interest and intent to execute on an open request for quote ticket.",
-    #     'examples': [
-    #         'Confirmed, I will lift',
-    #         'ok, Ill buy'
-    #     ]
-    # },
-    # confirm_trade
     {'operation': 'confirm_trade',
         'description': "Operation to confirm interest and intent to execute on an open request for quote ticket.",
         'examples': [
-            'Was I filled on the last quote?',
-            'Did we execute on US1908293234?'
+            'lift',
+            'ok, Ill buy',
+            'sell',
+            'send it',
+            'execute',
+            'buy'
         ]
     },
+    # # confirm_trade
+    # {'operation': 'confirm_trade',
+    #     'description': "Operation to confirm interest and intent to execute on an open request for quote ticket.",
+    #     'examples': [
+    #         'Was I filled on the last quote?',
+    #         'Did we execute on US1908293234?'
+    #     ]
+    # },
     # get_last_trade
     {'operation': 'get_last_trade',
         'description': "Operation to query for the last trade executed on an open request for quote ticket.",
