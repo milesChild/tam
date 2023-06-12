@@ -1,0 +1,42 @@
+---
+title: Transaction Logs
+---
+classDiagram
+    class EVENT_TYPE{
+        <<enumeration>>
+        CHAT
+        QUOTE
+        QUOTE_CANCEL
+        MODIFY
+        TRADE
+        HISTORY
+        LAST_TRADE
+        REGISTER
+        GOODBYE
+    }
+
+    class QUOTE_TYPE{
+        <<enumeration>>
+        2WAY
+        BUY
+        SELL
+    }
+
+    class Log {
+        +enum event_type
+        +datetime event_time
+        +string quote_side
+        +enum quote_type
+        +int counterparty_id
+        +int user_id
+        +string security
+        +string figi
+        +string side
+        +bigint quantity
+        +float bid_offset
+        +float bid_quote
+        +float ask_quote
+        +float ask_offset
+        +float px
+        +longtext user_msg
+    }

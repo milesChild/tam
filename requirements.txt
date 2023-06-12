@@ -1,0 +1,8 @@
+openai
+python-telegram-bot
+requests
+pymysql
+pandas
+reportlab
+yfinance
+ibapi

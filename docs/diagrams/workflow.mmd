@@ -1,0 +1,34 @@
+---
+title: TAM
+---
+
+flowchart TD
+    counterparty[counterparty]
+
+
+    telegram[Telegram]
+    subgraph "AWS EC2"
+    tam["TAM: Telegram Automated Marketmaker"]
+    pe[Pricing Engine]
+    db[("RDS AWS MySQL")]
+    be["AWS Grafana"]
+    end
+
+    subgraph data
+    s1["IBKR TWS - Fixed Income\nYFinance - Equities, Futures, Currencies\nTRACE - BD Counterparty Data, both onboarded and potential\nCME - Futures Reference Data\nARCA - ETF Reference Data"]
+    end
+
+
+    counterparty <--> telegram
+    telegram <--> tam
+    tam <--> data
+    tam <--> pe
+    tam <--> db
+    data --> db
+    data --> pe
+    pe <--> db
+    db --> be
+
+
+
+
